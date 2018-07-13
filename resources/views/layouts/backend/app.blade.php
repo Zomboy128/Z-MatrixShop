@@ -14,7 +14,7 @@
     <!-- Custom CSS -->
     <link href="{{ asset('assets/backend/libs/flot/css/float-chart.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
-    <link href="{{ assets('assets/backend/css/style.min.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -716,14 +716,14 @@
                                 </div>
                                 <div class="tab-pane  p-20" id="profile" role="tabpanel">
                                     <div class="p-20">
-                                        <img src="{{ asset('assets/backend/images/background/img4.jpg') }" class="img-fluid">
+                                        <img src="{{ asset('assets/backend/images/background/img4.jpg') }}" class="img-fluid">
                                         <p class="m-t-10">And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment..</p>
                                     </div>
                                 </div>
                                 <div class="tab-pane p-20" id="messages" role="tabpanel">
                                     <div class="p-20">
                                         <p>And is full of waffle to It has multiple paragraphs and is full of waffle to pad out the comment. Usually, you just wish these sorts of comments would come to an end.multiple paragraphs and is full of waffle to pad out the comment..</p>
-                                        <img src="{{ asset('assets/backend/images/background/img4.jpg') }" class="img-fluid">
+                                        <img src="{{ asset('assets/backend/images/background/img4.jpg') }}" class="img-fluid">
                                     </div>
                                 </div>
                             </div>
