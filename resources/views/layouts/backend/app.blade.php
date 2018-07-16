@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="{{ app()->getLocale() }}">
+<title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
 
 <head>
     <meta charset="utf-8">
@@ -15,6 +16,7 @@
     <link href="{{ asset('assets/backend/libs/flot/css/float-chart.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
     <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
+    @stack('css')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -49,13 +51,18 @@
         <!-- ============================================================== -->
         <!-- Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
+    
         @include('layouts.backend.partial.sidebar')
+    
         <!-- ============================================================== -->
         <!-- End Left Sidebar - style you can find in sidebar.scss  -->
         <!-- ============================================================== -->
         <!-- ============================================================== -->
         <!-- Page wrapper  -->
         <!-- ============================================================== -->
+    
+        @yield('content')
+    
           <!-- ============================================================== -->
             <!-- End Container fluid  -->
             <!-- ============================================================== -->

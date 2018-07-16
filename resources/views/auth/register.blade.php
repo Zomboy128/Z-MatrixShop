@@ -27,7 +27,7 @@
                     <br>
                     <br>
                     <!-- Form -->
-                    <form class="form-horizontal m-t-20" action="{{ route('register') }}">
+                    <form method="POST" class="form-horizontal m-t-20" action="{{ route('register') }}">
                         @csrf
                         <div class="row p-b-30">
                             <div class="col-12">
@@ -35,7 +35,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-success text-white" id="basic-addon1"><i class="ti-user"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg {{ $errors->has('name') ? ' is-invalid' : '' }} " placeholder="name" aria-label="name" aria-describedby="basic-addon1" value="{{ old('name') }}" required autofocus>
+                                    <input type="text" class="form-control form-control-lg {{ $errors->has('name') ? ' is-invalid' : '' }} " placeholder="name" aria-label="name" aria-describedby="basic-addon1" value="{{ old('name') }}" required autofocus name="name">
                                     @if ($errors->has('name'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -56,9 +56,20 @@
                                 </div>
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
+                                        <span class="input-group-text bg-primary text-white" id="basic-addon1"><i class="ti-user""></i></span>
+                                    </div>
+                                    <input type="text" class="form-control form-control-lg {{ $errors->has('username') ? ' is-invalid' : '' }}" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1" name="username" value="{{ old('username') }}" required>
+                                    @if ($errors->has('username'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+                                </div>
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
                                         <span class="input-group-text bg-warning text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input type="text" class="form-control form-control-lg {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" required>
+                                    <input type="password" class="form-control form-control-lg {{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" name="password" required>
                                     @if ($errors->has('password'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('password') }}</strong>
@@ -69,7 +80,7 @@
                                     <div class="input-group-prepend">
                                         <span class="input-group-text bg-info text-white" id="basic-addon2"><i class="ti-pencil"></i></span>
                                     </div>
-                                    <input id="password-confirm" type="pasword" class="form-control form-control-lg" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" name="password_confirmation" required>
+                                    <input id="password-confirm" type="password" class="form-control form-control-lg" placeholder=" Confirm Password" aria-label="Password" aria-describedby="basic-addon1" name="password_confirmation" required>
                                 </div>
                             </div>
 

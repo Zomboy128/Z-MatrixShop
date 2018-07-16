@@ -27,7 +27,7 @@
                     <br>
                     <br>
                     <!-- Form -->
-                    <form class="form-horizontal m-t-20" id="loginform" action="{{ route('login') }}">
+                    <form method="POST" class="form-horizontal m-t-20" id="loginform" action="{{ route('login') }}">
                         @csrf
                         <div class="row p-b-30">
                             <div class="col-12">
@@ -78,7 +78,7 @@
                     <br>
                     <div class="row m-t-20">
                         <!-- Form -->
-                        <form class="col-12" action="{{ route('password.email') }}">
+                        <form method="POST" class="col-12" action="{{ route('password.email') }}">
                             @csrf
                             <!-- email -->
                             <div class="input-group mb-3">
