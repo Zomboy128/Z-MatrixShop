@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="{{ app()->getLocale() }}">
-<title>@yield('title') - {{ config('app.name', 'Laravel') }}</title>
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,7 +9,7 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/backend/images/favicon.png') }}">
-    <title>Z-MatrixShop</title>
+    <title>@yield('title')</title>
     <!-- Custom CSS -->
     <link href="{{ asset('assets/backend/libs/flot/css/float-chart.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
@@ -109,6 +107,24 @@
     <script src="{{ asset('assets/backend/libs/flot/jquery.flot.crosshair.js') }}"></script>
     <script src="{{ asset('assets/backend/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
     <script src="{{ asset('assets/backend/js/pages/chart/chart-page-init.js') }}"></script>
+
+    <script>
+
+    $('[data-toggle="tooltip"]').tooltip();
+    $(".preloader").fadeOut();
+    // ============================================================== 
+    // Login and Recover Password 
+    // ============================================================== 
+    $('#to-recover').on("click", function() {
+        $("#loginform").slideUp();
+        $("#recoverform").fadeIn();
+    });
+    $('#to-login').click(function(){
+        
+        $("#recoverform").hide();
+        $("#loginform").fadeIn();
+    });
+    </script>
 
 </body>
 
