@@ -467,12 +467,23 @@
 							<a href="#" data-toggle="modal" data-target="#myModal2">
 								Sign Up Now</a>
 						</p>
-						<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="User Name" name="Name" required="">
+						<form method="post" action="{{ route('login') }}">
+							@csrf
+							<div class="styled-input agile-styled-input-top {{ $errors->has('email') ? ' is-invalid' : '' }}">
+								<input type="email" placeholder="Email" name="email" required value="{{ old('email') }}">
+								 @if ($errors->has('email'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                @endif
 							</div>
-							<div class="styled-input">
+							<div class="styled-input {{ $errors->has('password') ? ' is-invalid' : '' }}">
 								<input type="password" placeholder="Password" name="password" required="">
+								@if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                 @endif
 							</div>
 							<input type="submit" value="Sign In">
 						</form>
@@ -504,18 +515,42 @@
 						<p>
 							Come join the Grocery Shoppy! Let's set up your Account.
 						</p>
-						<form action="#" method="post">
-							<div class="styled-input agile-styled-input-top">
-								<input type="text" placeholder="Name" name="Name" required="">
+						<form action="{{ route('register') }}" method="post">
+							 @csrf
+							<div class="styled-input agile-styled-input-top {{ $errors->has('name') ? ' is-invalid' : '' }} ">
+								<input type="text" placeholder="Name" name="name" required value="{{ old('name') }}">
+								@if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+							</div>
+							<div class="styled-input {{ $errors->has('email') ? ' is-invalid' : '' }}">
+								<input type="email" placeholder="E-mail" name="email" required value="{{ old('email') }}">
+								@if ($errors->has('name'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('name') }}</strong>
+                                    </span>
+                                @endif
+							</div>
+							<div class="styled-input agile-styled-input-top {{ $errors->has('username') ? ' is-invalid' : '' }} ">
+								<input type="text" placeholder="Username" name="username" required value="{{ old('username') }}">
+								@if ($errors->has('username'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('username') }}</strong>
+                                    </span>
+                                @endif
+							</div>
+							<div class="styled-input {{ $errors->has('password') ? ' is-invalid' : '' }}">
+							<input type="password" placeholder="Password" name="password" required>
+								 @if ($errors->has('password'))
+                                    <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $errors->first('password') }}</strong>
+                                    </span>
+                                @endif
 							</div>
 							<div class="styled-input">
-								<input type="email" placeholder="E-mail" name="Email" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Password" name="password" id="password1" required="">
-							</div>
-							<div class="styled-input">
-								<input type="password" placeholder="Confirm Password" name="Confirm Password" id="password2" required="">
+								<input type="password" placeholder="Confirm Password" name="password_confirmation" required>
 							</div>
 							<input type="submit" value="Sign Up">
 						</form>

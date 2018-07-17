@@ -27,7 +27,7 @@
                     <br>
                     <br>
                     <!-- Form -->
-                    <form method="POST" class="form-horizontal m-t-20" action="{{ route('register') }}">
+                 <form method="POST" class="form-horizontal m-t-20" action="{{ route('register') }}">
                         @csrf
                         <div class="row p-b-30">
                             <div class="col-12">
