@@ -5,14 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/backend/images/favicon.png') }}">
     <title>@yield('title')</title>
     <!-- Custom CSS -->
     <link href="{{ asset('assets/backend/libs/flot/css/float-chart.css') }}" rel="stylesheet">
     <!-- Custom CSS -->
+    <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/extra-libs/multicheck/multicheck.css') }}">
+    <link href="{{ asset('assets/backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
     @stack('css')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -107,6 +108,24 @@
     <script src="{{ asset('assets/backend/libs/flot/jquery.flot.crosshair.js') }}"></script>
     <script src="{{ asset('assets/backend/libs/flot.tooltip/js/jquery.flot.tooltip.min.js') }}"></script>
     <script src="{{ asset('assets/backend/js/pages/chart/chart-page-init.js') }}"></script>
+
+
+
+
+    
+    
+    
+    
+
+    <!--El Js Que tiene Buscador en la tabla con su paginacion -->
+    <script src="{{ asset('assets/backend/extra-libs/DataTables/datatables.min.js') }}"></script>
+    <script>
+        /****************************************
+         *       Basic Table                   *
+         ****************************************/
+        $('#zero_config').DataTable();
+    </script>
+    <!--aqui termina la tabla con el buscador -->
 
     <script>
 
