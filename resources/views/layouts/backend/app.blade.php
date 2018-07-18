@@ -15,6 +15,16 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/extra-libs/multicheck/multicheck.css') }}">
     <link href="{{ asset('assets/backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
+
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/select2/dist/css/select2.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/jquery-minicolors/jquery.minicolors.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/quill/dist/quill.snow.css') }}">
+    <link rel="stylesheet" href="http://cdn.bootcss.com/toastr.js/latest/css/toastr.min.css">
+     
+
     @stack('css')
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -85,6 +95,10 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
+    <script src="http://cdn.bootcss.com/jquery/2.2.4/jquery.min.js"></script>
+        <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
+    {!! Toastr::message() !!}
+
     <script src="{{ asset('assets/backend/libs/jquery/dist/jquery.min.js') }}"></script>
     <!-- Bootstrap tether Core JavaScript -->
     <script src="{{ asset('assets/backend/libs/popper.js/dist/umd/popper.min.js') }}"></script>
@@ -144,6 +158,65 @@
         $("#loginform").fadeIn();
     });
     </script>
+
+
+
+
+    <!-- This Page JS -->
+    <script src="{{ asset('assets/backend/libs/inputmask/dist/min/jquery.inputmask.bundle.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/js/pages/mask/mask.init.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/select2/dist/js/select2.full.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/select2/dist/js/select2.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/jquery-asColor/dist/jquery-asColor.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/jquery-asGradient/dist/jquery-asGradient.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/jquery-asColorPicker/dist/jquery-asColorPicker.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/jquery-minicolors/jquery.minicolors.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/bootstrap-datepicker/dist/js/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('assets/backend/libs/quill/dist/quill.min.js') }}"></script>
+    <script>
+        //***********************************//
+        // For select 2
+        //***********************************//
+        $(".select2").select2();
+
+        /*colorpicker*/
+        $('.demo').each(function() {
+        //
+        // Dear reader, it's actually very easy to initialize MiniColors. For example:
+        //
+        //  $(selector).minicolors();
+        //
+        // The way I've done it below is just for the demo, so don't get confused
+        // by it. Also, data- attributes aren't supported at this time...they're
+        // only used for this demo.
+        //
+        $(this).minicolors({
+                control: $(this).attr('data-control') || 'hue',
+                position: $(this).attr('data-position') || 'bottom left',
+
+                change: function(value, opacity) {
+                    if (!value) return;
+                    if (opacity) value += ', ' + opacity;
+                    if (typeof console === 'object') {
+                        console.log(value);
+                    }
+                },
+                theme: 'bootstrap'
+            });
+
+        });
+        /*datwpicker*/
+        jQuery('.mydatepicker').datepicker();
+        jQuery('#datepicker-autoclose').datepicker({
+            autoclose: true,
+            todayHighlight: true
+        });
+        var quill = new Quill('#editor', {
+            theme: 'snow'
+        });
+
+    </script>
+
 
 </body>
 

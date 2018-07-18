@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Category;
 use Brian2694\Toastr\Facades\Toastr;
+use Carbon\Carbon;
 
 class CategoryController extends Controller
 {
@@ -22,14 +23,14 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-    	$this->validate($request,['name' => 'reqiored|min:3']);
+    	$this->validate($request,['name' => 'required|min:3']);
 
     	$categorias = new Category();
     	$categorias->name = $request->name;
     	$categorias->slug = str_slug($request->name);
     	$categorias->save();
         Toastr::success('Categoria Guardada Con Exito :)' ,'Success');
-    	return redirect()->route('categorias.index');
+    	return redirect()->route('admin.categorias.index');
 
     }
 }
