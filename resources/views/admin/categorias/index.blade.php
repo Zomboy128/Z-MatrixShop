@@ -2,11 +2,10 @@
 
 @section('title','Categorias')
 
-@push('css')
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/extra-libs/multicheck/multicheck.css') }}">
-    <link href="{{ asset('assets/backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
-@endpush
+
+ @push('css')
+ <link href="{{ asset('assets/backend/libs/datatables.net-bs4/css/dataTables.bootstrap4.css') }}" rel="stylesheet">
+ @endpush
 
 @section('content')
 
@@ -71,11 +70,14 @@
                                             <td>{{ $categorias->created_at }}</td>
                                             <td>{{ $categorias->updated_at }}</td>
                                             <td class="text-center">
-                                                <a href="" class="btn btn-info waves-effect" data-toggle="tooltip" data-placement="top" data-original-title="Editar"><i class="fas fa-edit"></i>
+                                                <a href="{{ route('admin.categorias.edit',$categorias->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" data-original-title="Editar"><i class="fas fa-edit"></i>
                                                 </a>
-                                                <button class="btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar"><i class="fas fa-trash"></i>
+                                                <button class="btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar" onclick="deleteCategory({{ $categorias->id}})"><i class="fas fa-trash"></i>
                                                 </button>
-
+                                                <form id="delete-form-{{ $categorias->id }}" action="{{ route('admin.categorias.destroy',$categorias->id) }}" method="POST" style="display: none;">
+                                                    @csrf
+                                                    @method('DELETE')
+                                                </form>
                                             </td>
                                          </tr>   
                                          @endforeach   
@@ -112,22 +114,11 @@
 @endsection
 
 @push('js')
-<script src="{{ asset('assets/backend/libs/jquery/dist/jquery.min.js') }}"></script>
-    <!-- Bootstrap tether Core JavaScript -->
-    <script src="{{ asset('assets/backend/libs/popper.js/dist/umd/popper.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/libs/bootstrap/dist/js/bootstrap.min.js') }}"></script>
-    <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="{{ asset('assets/backend/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js') }}"></script>
-    <script src="{{ asset('assets/backend/extra-libs/sparkline/sparkline.js') }}"></script>
-    <!--Wave Effects -->
-    <script src="{{ asset('assets/backend/js/waves.js') }}"></script>
-    <!--Menu sidebar -->
-    <script src="{{ asset('assets/backend/js/sidebarmenu.js') }}"></script>
-    <!--Custom JavaScript -->
-    <script src="{{ asset('assets/backend/js/custom.min.js') }}"></script>
-    <!-- this page js -->
-    <script src="{{ asset('assets/backend/extra-libs/multicheck/datatable-checkbox-init.js') }}"></script>
-    <script src="{{ asset('assets/backend/extra-libs/multicheck/jquery.multicheck.js') }}"></script>
+
+   <!-- this page js -->
+    <script src="{{ asset('assets/backend/extra-libs/DataTables/datatables.min.js') }}"></script>
+    
+    <!--El Js Que tiene Buscador en la tabla con su paginacion -->
     <script src="{{ asset('assets/backend/extra-libs/DataTables/datatables.min.js') }}"></script>
     <script>
         /****************************************
@@ -135,19 +126,20 @@
          ****************************************/
         $('#zero_config').DataTable();
     </script>
+    <!--aqui termina la tabla con el buscador -->
 
     <script src="https://unpkg.com/sweetalert2@7.19.1/dist/sweetalert2.all.js"></script>
     <script type="text/javascript">
         function deleteCategory(id) {
             swal({
-                title: 'Are you sure?',
-                text: "You won't be able to revert this!",
+                title: '¿Esta Seguro?',
+                text: " !No Podra Revertir Esto!",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: 'Yes, delete it!',
-                cancelButtonText: 'No, cancel!',
+                confirmButtonText: 'Si, Eliminar!',
+                cancelButtonText: 'No, cancelar!',
                 confirmButtonClass: 'btn btn-success',
                 cancelButtonClass: 'btn btn-danger',
                 buttonsStyling: false,
@@ -161,8 +153,8 @@
                     result.dismiss === swal.DismissReason.cancel
                 ) {
                     swal(
-                        'Cancelled',
-                        'Your data is safe :)',
+                        'Cancelado',
+                        'Los Datos Estan Seguros :)',
                         'error'
                     )
                 }
@@ -170,3 +162,4 @@
         }
     </script>
 @endpush
+    
