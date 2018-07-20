@@ -74,7 +74,7 @@
                                                 </a>
                                                 <button class="btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar" onclick="deleteCategory({{ $categorias->id}})"><i class="fas fa-trash"></i>
                                                 </button>
-                                                <form id="delete-form-{{ $categorias->id }}" action="{{ route('admin.categorias.destroy',$categorias->id) }}" method="POST" style="display: none;">
+<form id="delete-form-{{ $categorias->id }}" action="{{ route('admin.categorias.destroy',$categorias->id) }}" method="POST" style="display: none;">
                                                     @csrf
                                                     @method('DELETE')
                                                 </form>
@@ -113,11 +113,9 @@
 
 @endsection
 
-@push('js')
 
-   <!-- this page js -->
-    <script src="{{ asset('assets/backend/extra-libs/DataTables/datatables.min.js') }}"></script>
-    
+@push('js')    
+
     <!--El Js Que tiene Buscador en la tabla con su paginacion -->
     <script src="{{ asset('assets/backend/extra-libs/DataTables/datatables.min.js') }}"></script>
     <script>
@@ -133,7 +131,7 @@
         function deleteCategory(id) {
             swal({
                 title: '¿Esta Seguro?',
-                text: " !No Podra Revertir Esto!",
+                text: " !No Podras Revertir Esto!",
                 type: 'warning',
                 showCancelButton: true,
                 confirmButtonColor: '#3085d6',
@@ -146,7 +144,6 @@
                 reverseButtons: true
             }).then((result) => {
                 if (result.value) {
-                    event.preventDefault();
                     document.getElementById('delete-form-'+id).submit();
                 } else if (
                     // Read more about handling dismissals
@@ -162,4 +159,5 @@
         }
     </script>
 @endpush
+
     

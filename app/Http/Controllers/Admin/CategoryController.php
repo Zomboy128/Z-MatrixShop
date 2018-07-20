@@ -54,9 +54,8 @@ class CategoryController extends Controller
 
     public function destroy($id)
     {
-        $categorias = Category::find($id);
-        $categorias->delete();
+        Category::find($id)->delete();
         Toastr::success('Categoria Eliminada Con Exito :)' ,'Success');
-        return redirect()->route('admin.categorias.dashboard');
+        return redirect()->back();
     }
 }
