@@ -2,13 +2,13 @@
 
 @section('title','Categoria - Agregar Nueva Categoria')
 
-
+@push('css')
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/select2/dist/css/select2.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/jquery-minicolors/jquery.minicolors.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/quill/dist/quill.snow.css') }}">
     <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
-
+@endpush
 
 @section('content')
 
