@@ -21,6 +21,7 @@ Auth::routes();
 Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'=>['auth','admin']], function (){
     Route::get('dashboard','DashboardController@index')->name('dashboard');
     Route::resource('categorias','CategoryController');
+    Route::resource('marcas','MarcasController');
 });
 
 Route::group(['as'=>'user.','prefix'=>'user','namespace'=>'User','middleware'=>['auth','user']], function (){
