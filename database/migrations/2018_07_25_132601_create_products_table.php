@@ -14,7 +14,7 @@ class CreateProductsTable extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            $table->stirng('image')->default('default.png');
+            $table->string('image')->default('default.png');
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
@@ -24,7 +24,8 @@ class CreateProductsTable extends Migration
             $table->text('caracteristicas');
             $table->double('Precio_venta');
             $table->integer('cantidad_ingresar');
-            $table->integer('brand_id');
+            $table->integer('brand_id')->unsigned();
+            $table->foreign('brand_id')->references('id')->on('brands')->onDelete('cascade');
             $table->integer('category_id');
             $table->timestamps();
         });

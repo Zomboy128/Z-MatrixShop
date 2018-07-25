@@ -22,6 +22,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::get('dashboard','DashboardController@index')->name('dashboard');
     Route::resource('categorias','CategoryController');
     Route::resource('marcas','MarcasController');
+    Route::resource('productos','ProductController');
 });
 
 Route::group(['as'=>'user.','prefix'=>'user','namespace'=>'User','middleware'=>['auth','user']], function (){

@@ -13,11 +13,11 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                          <form class="form-horizontal" action="{{ route('admin.marcas.update',$marcas->id) }}" method="POST">
+                          <form class="form-horizontal" action="{{ route('admin.productos.update',$producto->id) }}" method="POST">
                             	@csrf
                             	@method('PUT')
                                 <div class="card-body">
-                                    <h4 class="card-title">Editar Marca</h4>
+                                    <h4 class="card-title">Editar Producto</h4>
                                     <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nombre De La Marca</label>
                                         <div class="col-sm-9">
