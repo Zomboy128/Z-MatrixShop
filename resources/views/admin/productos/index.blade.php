@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title','Marcas')
+@section('title','Productos')
 
 
  @push('css')
@@ -56,7 +56,6 @@
                                                 <th>ID</th>
                                                 <th>Imagen</th>
                                                 <th>Nombre</th>
-                                                <th>Slug</th>
                                                 <th>Marca</th>
                                                 <th>Modelo</th>
                                                 <th>Categoria</th>
@@ -74,15 +73,14 @@
                                          @foreach($products as $key=>$producto)
                                          <tr>
                                             <td>{{ $key + 1 }}</td>
-                                            <td><img class="img-responsive img-thumbnail" src="{{ asset('uploads/products/'.$producto->image) }}"></td>
+                                            <td><img class="img-responsive img-thumbnail" src="{{ asset('uploads/products/'.$producto->image) }}" style="height: 100px; width: 100px"></td>
                                             <td>{{ $producto->name }}</td>
-                                            <td>{{ $producto->slug }}</td>
                                             <td>{{ $producto->brands->name}}</td>
                                             <td>{{ $producto->modelo }}</td>
                                             <td>{{ $producto->category->name }}</td>
                                             <td>{{ $producto->Num_serie }}</td>
                                             <td>{{ $producto->caracteristicas }}</td>
-                                            <td>{{ $producto->Precio_venta }}</td>
+                                            <td>${{ $producto->Precio_venta }}</td>
                                             <td>{{ $producto->cantidad_ingresar }}</td>
                                             <td>{{ $producto->Fecha_fabricacion }}</td>
                                             <td>{{ $producto->created_at }}</td>
@@ -105,7 +103,6 @@
                                                 <th>ID</th>
                                                 <th>Imagen</th>
                                                 <th>Nombre</th>
-                                                <th>Slug</th>
                                                 <th>Marca</th>
                                                 <th>Modelo</th>
                                                 <th>Categoria</th>

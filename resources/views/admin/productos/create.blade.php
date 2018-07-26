@@ -1,6 +1,6 @@
 @extends('layouts.backend.app')
 
-@section('title','Marcas - Agregar Nueva Marca')
+@section('title','Productos - Agregar Nuevo Producto')
 
 
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/select2/dist/css/select2.min.css') }}">
@@ -22,7 +22,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="card">
-                            <form class="form-horizontal" action="{{ route('admin.productos.store') }}" method="POST">
+                            <form class="form-horizontal" action="{{ route('admin.productos.store') }}" method="POST" enctype="multipart/form-data">
                             	@csrf
                                 <div class="card-body">
                                     <h4 class="card-title">Agregar Nuevo Producto</h4>
@@ -81,26 +81,21 @@
                                      <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Ingrese La Cantidad Del Producto a Ingresar</label>
                                         <div class="col-sm-9">
-                                        <input type="number" class="form-control" id="fname" name="Cantidad_ingresar" placeholder="Ingresar Cantidad Aqui">
+                                        <input type="number" class="form-control" id="fname" name="cantidad_ingresar" placeholder="Ingresar Cantidad Aqui">
                                         </div>
                                     </div>
-                                    <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                            <h4 class="card-title">Ingrese Las Caracteristicas Del Producto</h4>
-                                <!-- Create the editor container -->
-                                <div id="editor" style="height: 300px;" name="caracteristicas">
-                                    <p>
-                                        <br>
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Ingrese Las Caracteristicas Del Producto</label>
+                                        <div class="col-sm-9">
+                                        <textarea class="form-control" name="caracteristicas" id="fname"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">Seleccione La Imagen Del Producto</label>
+                                        <div class="col-sm-9">
+                                            <input type="file" name="image" id="fname" class="form-control">
+                                        </div>
+                                    </div>
 
                                 <div class="border-top">
                                     <div class="card-body">
