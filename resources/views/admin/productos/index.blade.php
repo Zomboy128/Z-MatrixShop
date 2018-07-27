@@ -19,7 +19,7 @@
                     	<div class="block-header">
                           <a class="btn btn-primary waves-effect" href="{{ route('admin.productos.create') }}">
                           <i class="fas fa-pencil-alt"></i>
-                          <span>Agregar Nueva Producto</span>
+                          <span>Agregar Nuevo Producto</span>
                           </a>
                         </div>
                         
@@ -86,7 +86,7 @@
                                             <td>{{ $producto->created_at }}</td>
                                             <td>{{ $producto->updated_at }}</td>
                                             <td class="text-center">
-                                                <a href="{{ route('admin.productos.edit',$producto->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" data-original-title="Editar"><i class="fas fa-edit"></i>
+                                    <a href="{{ route('admin.productos.edit',$producto->id) }}" class="btn btn-info" data-toggle="tooltip" data-placement="top" data-original-title="Editar"><i class="fas fa-edit"></i>
                                                 </a>
                                                 <button class="btn btn-danger" type="button" data-toggle="tooltip" data-placement="top" data-original-title="Eliminar" onclick="deleteProduct({{ $producto->id}})"><i class="fas fa-trash"></i>
                                                 </button>

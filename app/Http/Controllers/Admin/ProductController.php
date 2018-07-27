@@ -9,6 +9,7 @@ use App\Brand;
 use App\Category;
 use Carbon\Carbon;
 use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Storage;
 
 class ProductController extends Controller
 {
@@ -46,7 +47,7 @@ class ProductController extends Controller
         $this->validate($request,[
             'image' => 'required|mimes:jpeg,jpg,bmp,png',
             'category'=>'required',
-            'name' => 'required|min:2|max:30|unique:products',
+            'name' => 'required|min:2|max:30',
             'brands'=> 'required',
             'modelo'=> 'required',
             'Fecha_fabricacion'=>'required',
@@ -110,7 +111,7 @@ class ProductController extends Controller
         $producto = Product::find($id);
         $brands = Brand::all();
         $categories = Category::all();
-        return view('admin.productos.edit',compact('products','categories','brands'));
+        return view('admin.productos.edit',compact('products','categories','brands','producto'));
     }
 
     /**
@@ -123,7 +124,7 @@ class ProductController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request,[
-            'image' => 'required|mimes:jpeg,jpg,bmp,png',
+            'image' => 'mimes:jpeg,jpg,bmp,png',
             'category'=>'required',
             'name' => 'required|min:2|max:30|unique:products',
             'brands'=> 'required',
@@ -136,6 +137,7 @@ class ProductController extends Controller
 
         ]);
 
+        $producto = Product::find($id);
         $image=$request->file('image');
         $slug=str_slug($request->name);
         if (isset($image))
@@ -147,11 +149,12 @@ class ProductController extends Controller
             {
                 mkdir('uploads/products',0777,true);
             }
+            unlink('uploads/products/'.$producto->image);
             $image->move('uploads/products',$imagename);
         }else{
-            $imagename = "default.png";
+            $imagename = $producto->image;
         }
-        $producto = new Product();
+
         $producto->category_id = $request->category;
         $producto->brand_id=$request->brands;
         $producto->name = $request->name;
