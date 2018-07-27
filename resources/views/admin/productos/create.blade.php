@@ -2,20 +2,30 @@
 
 @section('title','Productos - Agregar Nuevo Producto')
 
-
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/select2/dist/css/select2.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/jquery-minicolors/jquery.minicolors.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/quill/dist/quill.snow.css') }}">
-    <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
-
-
 @section('content')
-
 <div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <div class="block-header">
+                    <h4 class="page-title">Agregar Nuevo Producto</h4>
+                 </div>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Inicio</a></li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="{{ route('admin.productos.index') }}">Productos</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a>Agregar Nuevo Producto</a></li>   
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div> 
+    </div>                  
      <!-- Container fluid  -->
             <!-- ============================================================== -->
         <div class="container-fluid">
+
                 <!-- ============================================================== -->
                 <!-- Start Page Content -->
                 <!-- ============================================================== -->
@@ -25,7 +35,6 @@
                             <form class="form-horizontal" action="{{ route('admin.productos.store') }}" method="POST" enctype="multipart/form-data">
                             	@csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Agregar Nuevo Producto</h4>
                                     <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nombre Del Porducto</label>
                                         <div class="col-sm-9">
@@ -63,7 +72,7 @@
                                     <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Ingrese La Fecha De Fabricación Del Producto</label>
                                         <div class="col-sm-9">
-                                        <input type="text" class="form-control" id="fname" name="Fecha_fabricacion" placeholder="Fecha">
+                                        <input type="date" class="form-control" id="fname" name="Fecha_fabricacion" placeholder="Fecha">
                                         </div>
                                     </div>
                                     <div class="form-group row">

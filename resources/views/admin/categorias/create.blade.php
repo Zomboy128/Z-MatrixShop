@@ -2,17 +2,27 @@
 
 @section('title','Categoria - Agregar Nueva Categoria')
 
-
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/select2/dist/css/select2.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/jquery-minicolors/jquery.minicolors.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('assets/backend/libs/quill/dist/quill.snow.css') }}">
-    <link href="{{ asset('assets/backend/css/style.min.css') }}" rel="stylesheet">
-
-
 @section('content')
 
 <div class="page-wrapper">
+    <div class="page-breadcrumb">
+        <div class="row">
+            <div class="col-12 d-flex no-block align-items-center">
+                <div class="block-header">
+                    <h4 class="page-title">Agregar Nueva Categoria</h4>
+                 </div>
+                <div class="ml-auto text-right">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="{{ route('admin.dashboard') }}">Inicio</a></li>
+                            <li class="breadcrumb-item" aria-current="page"><a href="{{ route('admin.categorias.index') }}">Categorias</a></li>
+                            <li class="breadcrumb-item active" aria-current="page"><a>Agregar Nueva Categoria</a></li>   
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div> 
+    </div>       
      <!-- Container fluid  -->
             <!-- ============================================================== -->
         <div class="container-fluid">
@@ -25,7 +35,6 @@
                             <form class="form-horizontal" action="{{ route('admin.categorias.store') }}" method="POST">
                             	@csrf
                                 <div class="card-body">
-                                    <h4 class="card-title">Agregar Nueva Categoria</h4>
                                     <div class="form-group row">
                                         <label for="fname" class="col-sm-3 text-right control-label col-form-label">Nombre De La Categoria</label>
                                         <div class="col-sm-9">
