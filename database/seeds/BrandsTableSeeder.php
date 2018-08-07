@@ -13,9 +13,15 @@ class BrandsTableSeeder extends Seeder
     public function run()
     {
         DB::table('brands')->insert([
-         'name'=>'Sony',
-         'product_id' => '1',
-         'slug'=>'sony',
+        	'name'=>'Sony',
+        	'slug' =>'sony',
+        	'image' =>'default.png',
+        ]);
+
+         DB::table('brands')->insert([
+        	'name'=>'Samsung',
+        	'slug' =>'samsung',
+        	'image' =>'default.png',
         ]);
     }
 }

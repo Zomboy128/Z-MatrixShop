@@ -6,9 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Category extends Model
 {
-	public function products()
-	{
-       return $this->belonsToMany('App\Product')->withTimestamps();
+     public function products()
+    {
+    	return $this->hasMany('App\Product');
     }
 }
-
