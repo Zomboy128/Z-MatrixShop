@@ -324,7 +324,7 @@
 						<span class="fa fa-map-marker" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-8 text-form-footer">
-						<h3>Track Your Order</h3>
+						<h3>Mira El Estado De Tu Orden</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -333,7 +333,7 @@
 						<span class="fa fa-refresh" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-8 text-form-footer">
-						<h3>Free & Easy Returns</h3>
+						<h3>Devoluciones gratuitas y fáciles</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -342,7 +342,7 @@
 						<span class="fa fa-times" aria-hidden="true"></span>
 					</div>
 					<div class="col-xs-8 text-form-footer">
-						<h3>Online cancellation </h3>
+						<h3>Cancelacion Online</h3>
 					</div>
 					<div class="clearfix"></div>
 				</div>
@@ -354,10 +354,10 @@
 				<!-- footer categories -->
 				<div class="col-sm-5 address-right">
 					<div class="col-xs-6 footer-grids">
-						<h3>Categories</h3>
+						<h3>Categorias</h3>
 						<ul>
 							<li>
-								<a href="product.html">Grocery</a>
+								<a href="product.html">Comestibles</a>
 							</li>
 							<li>
 								<a href="product.html">Fruits</a>
@@ -404,7 +404,7 @@
 				<!-- quick links -->
 				<div class="col-sm-5 address-right">
 					<div class="col-xs-6 footer-grids">
-						<h3>Quick Links</h3>
+						<h3>Enlaces Rápidos</h3>
 						<ul>
 							<li>
 								<a href="about.html">About Us</a>
@@ -427,7 +427,7 @@
 						</ul>
 					</div>
 					<div class="col-xs-6 footer-grids">
-						<h3>Get in Touch</h3>
+						<h3>Estar en contacto</h3>
 						<ul>
 							<li>
 								<i class="fa fa-map-marker"></i> 123 Sebastian, USA.</li>
@@ -445,7 +445,7 @@
 				<!-- //quick links -->
 				<!-- social icons -->
 				<div class="col-sm-2 footer-grids  w3l-socialmk">
-					<h3>Follow Us on</h3>
+					<h3>Siguenos En:</h3>
 					<div class="social">
 						<ul>
 							<li>
@@ -466,7 +466,7 @@
 						</ul>
 					</div>
 					<div class="agileits_app-devices">
-						<h5>Download the App</h5>
+						<h5>Descarga Nuestra App</h5>
 						<a href="#">
 							<img src="{{ asset('assets/frontend/images/1.png') }}" alt="">
 						</a>
@@ -483,19 +483,19 @@
 			<!-- footer fourth section (text) -->
 			<div class="agile-sometext">
 				<div class="sub-some">
-					<h5>Online Grocery Shopping</h5>
-					<p>Order online. All your favourite products from the low price online supermarket for grocery home delivery in Delhi,
-						Gurgaon, Bengaluru, Mumbai and other cities in India. Lowest prices guaranteed on Patanjali, Aashirvaad, Pampers, Maggi,
-						Saffola, Huggies, Fortune, Nestle, Amul, MamyPoko Pants, Surf Excel, Ariel, Vim, Haldiram's and others.</p>
+					<h5>Compras en línea de comestibles</h5>
+					<p>Comprar online. Todos sus productos favoritos del supermercado en línea de bajo precio para entrega a domicilio en Delhi,
+                    Gurgaon, Bengaluru, Mumbai y otras ciudades en India. Los precios más bajos están garantizados en Patanjali, Aashirvaad, Pampers, Maggi,
+                    Saffola, Huggies, Fortune, Nestlé, Amul, MamyPoko Pants, Surf Excel, Ariel, Vim, Haldiram y otros.</p>
 				</div>
 				<div class="sub-some">
-					<h5>Shop online with the best deals & offers</h5>
-					<p>Now Get Upto 40% Off On Everyday Essential Products Shown On The Offer Page. The range includes Grocery, Personal Care,
-						Baby Care, Pet Supplies, Healthcare and Other Daily Need Products. Discount May Vary From Product To Product.</p>
+					<h5>Compre en línea con las mejores ofertas</h5>
+					<p>Ahora obtenga hasta 40% de descuento en productos esenciales diarios que se muestran en la página de ofertas. La gama incluye Grocery, Personal Care,
+Cuidado del bebé, suministros para mascotas, atención médica y otros productos diarios necesarios. El descuento puede variar de un producto a otro.</p>
 				</div>
 				<!-- brands -->
 				<div class="sub-some">
-					<h5>Popular Brands</h5>
+					<h5>Marcas Populares</h5>
 					<ul>
 						<li>
 							<a href="product.html">Aashirvaad</a>
@@ -644,8 +644,8 @@
 	<!-- copyright -->
 	<div class="copy-right">
 		<div class="container">
-			<p>© 2017 Grocery Shoppy. All rights reserved | Design by
-				<a href="http://w3layouts.com"> W3layouts.</a>
+			<p>© 2018 Z-MatrixShop. Todos Los Derechos Reservados | Design by
+				<a href="http://w3layouts.com">Z-Solutions.</a>
 			</p>
 		</div>
 	</div>
@@ -693,11 +693,11 @@
 
 			// Count the number of each item in the cart
 			for (i = 0; i < len; i++) {
-				total += items[i].get('quantity');
+				total += items[i].get('Cantidad');
 			}
 
 			if (total < 3) {
-				alert('The minimum order quantity is 3. Please add more to your shopping cart before checking out');
+				alert('La cantidad de orden mínima es 3. Agregue más a su carrito de compras antes de pagar.');
 				evt.preventDefault();
 			}
 		});
