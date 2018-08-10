@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Slider;
 use Carbon\Carbon;
+use Brian2694\Toastr\Facades\Toastr;
+use Illuminate\Support\Facades\Storage;
+
 
 class SliderController extends Controller
 {
@@ -64,7 +67,9 @@ class SliderController extends Controller
         $slider->sub_title = $request->sub_title;
         $slider->image = $imagename;
         $slider->save();
-        return redirect()->route('slider.index')->with('successMsg','Slider Successfully Saved');
+        Toastr::success('Slider Registrado Con Exito :)' ,'Success');
+        return redirect()->route('admin.slider.index');
+
     }
 
     /**
@@ -124,7 +129,8 @@ class SliderController extends Controller
         $slider->sub_title = $request->sub_title;
         $slider->image = $imagename;
         $slider->save();
-        return redirect()->route('slider.index')->with('successMsg','Slider Successfully Updated');
+        Toastr::success('Slider Actualizado Con Exito :)','Success');
+        return redirect()->route('admin.slider.index');
     }
 
     /**
@@ -141,6 +147,7 @@ class SliderController extends Controller
             unlink('uploads/slider/'.$slider->image);
         }
         $slider->delete();
-        return redirect()->back()->with('successMsg','Slider Successfully Deleted');
+        Toastr::success('Slider Eliminado Con Exito :)' ,'Success');
+        return redirect()->back();
     }
 }

@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Grocery Shoppy an Ecommerce Category Bootstrap Responsive Web Template | Home :: w3layouts</title>
+    <title>Z-MatrixShop</title>
     <!--/tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -43,7 +43,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <div class="ads-grid">
         <div class="container">
             <!-- tittle heading -->
-            <h3 class="tittle-w3l">Our Top Products
+            <h3 class="tittle-w3l">Nuestros Mejores Productos
                 <span class="heading-style">
                     <i></i>
                     <i></i>

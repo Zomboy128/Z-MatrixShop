@@ -1,7 +1,7 @@
  <div class="featured-section" id="projects">
 		<div class="container">
 			<!-- tittle heading -->
-			<h3 class="tittle-w3l">Special Offers
+			<h3 class="tittle-w3l">Ofertas Especiales
 				<span class="heading-style">
 					<i></i>
 					<i></i>
@@ -290,11 +290,11 @@
  <div class="footer-top">
 		<div class="container-fluid">
 			<div class="col-xs-8 agile-leftmk">
-				<h2>Get your Groceries delivered from local stores</h2>
-				<p>Free Delivery on your first order!</p>
+				<h2>Obtenga sus comestibles entregados en las tiendas locales</h2>
+				<p>¡Entrega gratuita en su primer pedido!</p>
 				<form action="#" method="post">
 					<input type="email" placeholder="E-mail" name="email" required="">
-					<input type="submit" value="Subscribe">
+					<input type="submit" value="Subscribete">
 				</form>
 				<div class="newsform-w3l">
 					<span class="fa fa-envelope-o" aria-hidden="true"></span>
@@ -312,7 +312,7 @@
 		<div class="container">
 			<!-- footer first section -->
 			<p class="footer-main">
-				<span>"Grocery Shoppy"</span> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
+				<span>"Z-MatrixShop"</span> Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur
 				magni dolores eos qui ratione voluptatem sequi nesciunt.Sed ut perspiciatis unde omnis iste natus error sit voluptatem
 				accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto
 				beatae vitae dicta sunt explicabo.</p>

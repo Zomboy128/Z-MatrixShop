@@ -59,6 +59,8 @@
                                 <a class="dropdown-item" href="{{ route('admin.marcas.create') }}">Marca</a>
                                 <div class="dropdown-divider"></div>
                                 <a class="dropdown-item" href="{{ route('admin.productos.create') }}">Producto</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="{{ route('admin.slider.create') }}">Slider</a>
                             </div>
                         </li>
                         <!-- ============================================================== -->

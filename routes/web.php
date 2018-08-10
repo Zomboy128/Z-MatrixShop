@@ -23,6 +23,7 @@ Route::group(['as'=>'admin.','prefix'=>'admin','namespace'=>'Admin','middleware'
     Route::resource('categorias','CategoryController');
     Route::resource('marcas','MarcasController');
     Route::resource('productos','ProductController');
+    Route::resource('slider','SliderController');
 });
 
 Route::group(['as'=>'user.','prefix'=>'user','namespace'=>'User','middleware'=>['auth','user']], function (){

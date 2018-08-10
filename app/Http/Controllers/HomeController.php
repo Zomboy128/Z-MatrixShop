@@ -5,6 +5,9 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Role;
 use App\User;
+use App\Slider;
+use App\Category;
+use App\products;
 
 class HomeController extends Controller
 {
@@ -17,6 +20,9 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('layouts.app');
+        $sliders = Slider::all();
+        $categories = Category::all();
+        $products = Item::all();
+        return view('layouts.app',compact('sliders','categories','products'));
     }
 }

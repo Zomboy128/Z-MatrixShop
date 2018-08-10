@@ -1,15 +1,15 @@
 <!-- product left -->
 			<div class="side-bar col-md-3">
 				<div class="search-hotel">
-					<h3 class="agileits-sear-head">Search Here..</h3>
+					<h3 class="agileits-sear-head">Buscar Aquí</h3>
 					<form action="#" method="post">
-						<input type="search" placeholder="Product name..." name="search" required="">
+						<input type="search" placeholder="Nombre Del Producto" name="search" required="">
 						<input type="submit" value=" ">
 					</form>
 				</div>
 				<!-- price range -->
 				<div class="range">
-					<h3 class="agileits-sear-head">Price range</h3>
+					<h3 class="agileits-sear-head">Rango Del Precio</h3>
 					<ul class="dropdown-menu6">
 						<li>
 
@@ -21,53 +21,53 @@
 				<!-- //price range -->
 				<!-- food preference -->
 				<div class="left-side">
-					<h3 class="agileits-sear-head">Food Preference</h3>
+					<h3 class="agileits-sear-head">Preferencia De Comida</h3>
 					<ul>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Vegetarian</span>
+							<span class="span">Vegetariana</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Non-Vegetarian</span>
+							<span class="span">No-Vegetariana</span>
 						</li>
 					</ul>
 				</div>
 				<!-- //food preference -->
 				<!-- discounts -->
 				<div class="left-side">
-					<h3 class="agileits-sear-head">Discount</h3>
+					<h3 class="agileits-sear-head">Ofertas</h3>
 					<ul>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">5% or More</span>
+							<span class="span">5% o Más</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">10% or More</span>
+							<span class="span">10% o Más</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">20% or More</span>
+							<span class="span">20% o Más</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">30% or More</span>
+							<span class="span">30% o Más</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">50% or More</span>
+							<span class="span">50% o Más</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">60% or More</span>
+							<span class="span">60% o Más</span>
 						</li>
 					</ul>
 				</div>
 				<!-- //discounts -->
 				<!-- reviews -->
 				<div class="customer-rev left-side">
-					<h3 class="agileits-sear-head">Customer Review</h3>
+					<h3 class="agileits-sear-head">Revisión delos clientes</h3>
 					<ul>
 						<li>
 							<a href="#">
@@ -124,54 +124,58 @@
 				<!-- //reviews -->
 				<!-- cuisine -->
 				<div class="left-side">
-					<h3 class="agileits-sear-head">Cuisine</h3>
+					<h3 class="agileits-sear-head">Cocina</h3>
 					<ul>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">South American</span>
+							<span class="span">Sur Americana</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">French</span>
+							<span class="span">Francesa</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Greek</span>
+							<span class="span">Griega</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Chinese</span>
+							<span class="span">China</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Japanese</span>
+							<span class="span">Japanesa</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Italian</span>
+							<span class="span">Italiana</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Mexican</span>
+							<span class="span">Mexicana</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Thai</span>
+							<span class="span">Thailandesa</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span">Indian</span>
+							<span class="span">India</span>
 						</li>
 						<li>
 							<input type="checkbox" class="checked">
-							<span class="span"> Spanish </span>
+							<span class="span"> Española </span>
+						</li>
+						<li>
+							<input type="checkbox" class="checked">
+							<span class="span">Centro Americana </span>
 						</li>
 					</ul>
 				</div>
 				<!-- //cuisine -->
 				<!-- deals -->
 				<div class="deal-leftmk left-side">
-					<h3 class="agileits-sear-head">Special Deals</h3>
+					<h3 class="agileits-sear-head">Ofertas Especiales</h3>
 					<div class="special-sec1">
 						<div class="col-xs-4 img-deals">
 							<img src="{{ asset('assets/frontend/') }}" alt="">
