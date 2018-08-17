@@ -7,7 +7,7 @@ use App\Role;
 use App\User;
 use App\Slider;
 use App\Category;
-use App\products;
+use App\Product;
 
 class HomeController extends Controller
 {
@@ -22,7 +22,7 @@ class HomeController extends Controller
     {
         $sliders = Slider::all();
         $categories = Category::all();
-        $products = Item::all();
+        $products = Product::all();
         return view('layouts.app',compact('sliders','categories','products'));
     }
 }

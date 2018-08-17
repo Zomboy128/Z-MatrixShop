@@ -1,3 +1,4 @@
+@foreach($sliders as $key=>$slider)
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators-->
 		<ol class="carousel-indicators">
@@ -5,16 +6,14 @@
 			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
 			<li data-target="#myCarousel" data-slide-to="3" class=""></li>
+            <li data-target="#myCarousel" data-slide-to="4" class=""></li>
 		</ol>
 		<div class="carousel-inner" role="listbox">
 			<div class="item active">
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>Big
-							<span>Save</span>
-						</h3>
-						<p>Get flat
-							<span>10%</span> Cashback</p>
+						<h3>{{$slider->title}}</h3>
+						<p>{{$slider->sub_title}}</p>
 						<a class="button2" href="product.html">Comprar Ahora</a>
 					</div>
 				</div>
@@ -56,6 +55,18 @@
 					</div>
 				</div>
 			</div>
+            <div class="item item5">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h3>Today
+                            <span>Discount</span>
+                        </h3>
+                        <p>Get Now
+                            <span>40%</span> Discount</p>
+                        <a class="button2" href="product.html">Shop Now </a>
+                    </div>
+                </div>
+            </div>
 		</div>
 		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -66,3 +77,4 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
+@endforeach

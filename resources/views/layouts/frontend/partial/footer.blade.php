@@ -697,7 +697,7 @@ Cuidado del bebé, suministros para mascotas, atención médica y otros producto
 			}
 
 			if (total < 3) {
-				alert('La cantidad de orden mínima es 3. Agregue más a su carrito de compras antes de pagar.');
+				alert('La cantidad de orden mínima es 3. Agrege más a su carrito de compras antes de pagar.');
 				evt.preventDefault();
 			}
 		});

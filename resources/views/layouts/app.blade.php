@@ -28,6 +28,73 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <link rel="stylesheet" type="text/css" href="{{ asset('assets/frontend/css/jquery-ui1.css') }}">
     <!-- fonts -->
     <link href="//fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800" rel="stylesheet">
+
+    <style>
+    @foreach($sliders as $key=>$slider)
+         .carousel .item:nth-child({{ $key + 1 }}){    
+    
+    background:-webkit-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url({{ asset('uploads/slider/'.$slider->image) }}) no-repeat;
+    background:-moz-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url({{ asset('uploads/slider/'.$slider->image) }}) no-repeat;
+    background:-ms-linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url({{ asset('uploads/slider/'.$slider->image) }}) no-repeat; 
+    background:linear-gradient(rgba(23, 22, 23, 0.2), rgba(23, 22, 23, 0.5)), url({{ asset('uploads/slider/'.$slider->image) }}) no-repeat;
+    background-size:cover;  
+    
+}
+.carousel-caption h2, .carousel-caption h3 {
+    font-size: 5em;
+    font-weight: 600;
+    letter-spacing: 0px;
+    text-transform: uppercase;
+    text-shadow: 3px 8px 2px rgb(12, 12, 12);
+    background: rgba(0, 0, 0, 0.34);
+    padding: 35px 0;
+}
+.carousel-caption h2 span, .carousel-caption h3 span{
+    font-weight: 800;
+    color: #FF5722;
+}
+.carousel-caption p {
+    letter-spacing: 5px;
+    font-size: 24px;
+    color: #fff;
+    margin: 20px 0;
+}
+.carousel-caption p span{
+    font-size: 40px;
+    letter-spacing: 0px;
+    font-weight:600;
+}
+.codes.agileitsbg3 {
+    background: #3498DB;  
+    padding-bottom: 10em;
+}
+.codes.agileitsbg4 {
+    background: #2ECC71 ; 
+    padding-bottom: 10em;
+}
+.carousel.slide.grid_3.grid_4 {  
+    border-top: 10px solid #3ACFD5;
+    border-bottom: 10px solid #3a4ed5;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    background-position: 0 0, 100% 0;
+    background-repeat: no-repeat;
+    -webkit-background-size: 10px 100%;
+    -moz-background-size: 10px 100%;
+    background-size: 10px 100%;
+    background-image: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dÃ¢â‚¬Â¦0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=),url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/PjxzdmcgeG1sbnM9Imh0dÃ¢â‚¬Â¦0iMSIgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2xlc3NoYXQtZ2VuZXJhdGVkKSIgLz48L3N2Zz4=);
+    background-image: -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%), -webkit-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background-image: -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%), -moz-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background-image: -o-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%), -o-linear-gradient(top, #3acfd5 0%, #3a4ed5 100%);
+    background-image: linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%), linear-gradient(to bottom, #3acfd5 0%, #3a4ed5 100%);
+}
+.carousel-indicators {
+    bottom: 4%;
+}
+@endforeach
+    </style>
+
 </head>
 
 <body>
