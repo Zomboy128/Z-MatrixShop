@@ -1,72 +1,23 @@
-@foreach($sliders as $key=>$slider)
+
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
 		<!-- Indicators-->
 		<ol class="carousel-indicators">
-			<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-			<li data-target="#myCarousel" data-slide-to="1" class=""></li>
-			<li data-target="#myCarousel" data-slide-to="2" class=""></li>
-			<li data-target="#myCarousel" data-slide-to="3" class=""></li>
-            <li data-target="#myCarousel" data-slide-to="4" class=""></li>
+			@foreach($sliders as $key=>$slider)
+			<li data-target="#myCarousel" data-slide-to="{{ $loop->index }}" class="{{ $slider->id ? 'active':'' }}"></li>
+			@endforeach
 		</ol>
 		<div class="carousel-inner" role="listbox">
-			<div class="item active">
+			@foreach($sliders as $key=>$slider)
+			<div class="item {{ $loop->first ? 'active' : '' }}">
 				<div class="container">
 					<div class="carousel-caption">
-						<h3>{{$slider->title}}</h3>
+						<h3><span>{{$slider->title}}</span></h3>
 						<p>{{$slider->sub_title}}</p>
 						<a class="button2" href="product.html">Comprar Ahora</a>
 					</div>
 				</div>
 			</div>
-			<div class="item item2">
-				<div class="container">
-					<div class="carousel-caption">
-						<h3>Healthy
-							<span>Saving</span>
-						</h3>
-						<p>Get Upto
-							<span>30%</span> Off</p>
-						<a class="button2" href="product.html">Comprar Ahora </a>
-					</div>
-				</div>
-			</div>
-			<div class="item item3">
-				<div class="container">
-					<div class="carousel-caption">
-						<h3>Big
-							<span>Deal</span>
-						</h3>
-						<p>Get Best Offer Upto
-							<span>20%</span>
-						</p>
-						<a class="button2" href="product.html">Comprar Ahora</a>
-					</div>
-				</div>
-			</div>
-			<div class="item item4">
-				<div class="container">
-					<div class="carousel-caption">
-						<h3>Today
-							<span>Discount</span>
-						</h3>
-						<p>Get Now
-							<span>40%</span> Discount</p>
-						<a class="button2" href="product.html">Shop Now </a>
-					</div>
-				</div>
-			</div>
-            <div class="item item5">
-                <div class="container">
-                    <div class="carousel-caption">
-                        <h3>Today
-                            <span>Discount</span>
-                        </h3>
-                        <p>Get Now
-                            <span>40%</span> Discount</p>
-                        <a class="button2" href="product.html">Shop Now </a>
-                    </div>
-                </div>
-            </div>
+           @endforeach
 		</div>
 		<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
 			<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -77,4 +28,5 @@
 			<span class="sr-only">Next</span>
 		</a>
 	</div>
-@endforeach
+
+

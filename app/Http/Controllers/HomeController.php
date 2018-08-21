@@ -23,6 +23,6 @@ class HomeController extends Controller
         $sliders = Slider::all();
         $categories = Category::all();
         $products = Product::all();
-        return view('layouts.app',compact('sliders','categories','products'));
+        return view('layouts.app',compact('sliders','categories','products','slider'));
     }
 }
