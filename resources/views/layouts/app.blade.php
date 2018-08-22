@@ -124,11 +124,12 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="wrapper">
                     <!-- first section (nuts) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Nuts</h3>
+                        <h3 class="heading-tittle">Nuevos</h3>
+                        @foreach($products as $product)
                         <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
+                            <div class="men-pro-item">
                                 <div class="men-thumb-item">
-                                    <img src="{{ asset('assets/frontend/images/m1.jpg') }}" alt="">
+                                    <img src="{{ asset('uploads/products/'.$product->image) }}" alt="" style="height: 150px; width: 190px;" >
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
                                             <a href="single.html" class="link-product-add-cart">Quick View</a>
@@ -138,10 +139,10 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="single.html">Almonds, 100g</a>
+                                        <a href="single.html">{{ $product->name }} </a>
                                     </h4>
                                     <div class="info-product-price">
-                                        <span class="item_price">$149.00</span>
+                                        <span class="item_price">${{$product->Precio_venta  }} </span>
                                         <del>$280.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
@@ -150,9 +151,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <input type="hidden" name="cmd" value="_cart" />
                                                 <input type="hidden" name="add" value="1" />
                                                 <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Almonds, 100g" />
-                                                <input type="hidden" name="amount" value="149.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
+                                                <input type="hidden" name="item_name" value="{{ $product->name }}" />
+                                                <input type="hidden" name="amount" value="{{ $product->Precio_venta }}" />
                                                 <input type="hidden" name="currency_code" value="USD" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
@@ -162,90 +162,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </div>
 
                                 </div>
+                               
                             </div>
+
                         </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{ asset('assets/frontend/images/m2.jpg') }}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <span class="product-new-top">New</span>
-
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="single.html">Cashew Nuts, 100g</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">$200.00</span>
-                                        <del>$420.00</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Cashew Nuts, 100g" />
-                                                <input type="hidden" name="amount" value="200.00" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 product-men">
-                            <div class="men-pro-item simpleCart_shelfItem">
-                                <div class="men-thumb-item">
-                                    <img src="{{ asset('assets/frontend/images/m3.jpg') }}" alt="">
-                                    <div class="men-cart-pro">
-                                        <div class="inner-men-cart-pro">
-                                            <a href="single.html" class="link-product-add-cart">Quick View</a>
-                                        </div>
-                                    </div>
-                                    <span class="product-new-top">New</span>
-
-                                </div>
-                                <div class="item-info-product ">
-                                    <h4>
-                                        <a href="single.html">Pista..., 250g</a>
-                                    </h4>
-                                    <div class="info-product-price">
-                                        <span class="item_price">$520.99</span>
-                                        <del>$600.99</del>
-                                    </div>
-                                    <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
-                                        <form action="#" method="post">
-                                            <fieldset>
-                                                <input type="hidden" name="cmd" value="_cart" />
-                                                <input type="hidden" name="add" value="1" />
-                                                <input type="hidden" name="business" value=" " />
-                                                <input type="hidden" name="item_name" value="Pista, 250g" />
-                                                <input type="hidden" name="amount" value="520.99" />
-                                                <input type="hidden" name="discount_amount" value="1.00" />
-                                                <input type="hidden" name="currency_code" value="USD" />
-                                                <input type="hidden" name="return" value=" " />
-                                                <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
-                                            </fieldset>
-                                        </form>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                         <div class="clearfix"></div>
+                        
                     </div>
+
                     <!-- //first section (nuts) -->
                     <!-- second section (nuts special) -->
                     <div class="product-sec1 product-sec2">
@@ -263,7 +188,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- //second section (nuts special) -->
                     <!-- third section (oils) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Oils</h3>
+                        <h3 class="heading-tittle">SmartTvs</h3>
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
@@ -388,7 +313,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <!-- //third section (oils) -->
                     <!-- fourth section (noodles) -->
                     <div class="product-sec1">
-                        <h3 class="heading-tittle">Pasta & Noodles</h3>
+                        <h3 class="heading-tittle">Ropa Y Calzado</h3>
                         <div class="col-md-4 product-men">
                             <div class="men-pro-item simpleCart_shelfItem">
                                 <div class="men-thumb-item">
