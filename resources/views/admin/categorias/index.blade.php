@@ -56,6 +56,7 @@
                                                 <th>ID</th>
                                                 <th>Nombre</th>
                                                 <th>Slug</th>
+                                                <th>URL</th>
                                                 <th>Creado el</th>
                                                 <th>Actualizado el</th>
                                                 <th>Acción</th>
@@ -67,6 +68,7 @@
                                             <td>{{ $key + 1 }}</td>
                                             <td>{{ $categorias->name }}</td>
                                             <td>{{ $categorias->slug }}</td>
+                                            <td>{{ $categorias->url }}</td>
                                             <td>{{ $categorias->created_at }}</td>
                                             <td>{{ $categorias->updated_at }}</td>
                                             <td class="text-center">
@@ -87,6 +89,7 @@
                                                 <th>ID</th>
                                                 <th>Nombre</th>
                                                 <th>Slug</th>
+                                                <th>URL</th>
                                                 <th>Creado el</th>
                                                 <th>Actualizado el</th>
                                                 <th>Acción</th>

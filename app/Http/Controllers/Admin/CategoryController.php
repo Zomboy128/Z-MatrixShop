@@ -23,11 +23,14 @@ class CategoryController extends Controller
 
     public function store(Request $request)
     {
-    	$this->validate($request,['name' => 'required|min:3|max:20|unique:categories']);
+    	$this->validate($request,[
+            'name' => 'required|min:3|max:20|unique:categories',
+            'url'=> 'required|url']);
 
     	$categorias = new Category();
     	$categorias->name = $request->name;
     	$categorias->slug = str_slug($request->name);
+        $categorias->url =$request->url;
     	$categorias->save();
         Toastr::success('Categoria Guardada Con Exito :)' ,'Success');
     	return redirect()->route('admin.categorias.index');
@@ -47,6 +50,7 @@ class CategoryController extends Controller
         $categorias = Category::find($id);
         $categorias->name = $request->name;
         $categorias->slug = str_slug($request->name);
+        $categorias->url =$request->url;
         $categorias->save();
         Toastr::success('Categoria Actualizada Con Exito :)' ,'Success');
         return redirect()->route('admin.categorias.index');

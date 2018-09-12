@@ -41,6 +41,12 @@
                                             <input type="text" class="form-control" id="fname" name="name" placeholder="Ingresar Nombre Aquí">
                                         </div>
                                     </div>
+                                    <div class="form-group row">
+                                        <label for="fname" class="col-sm-3 text-right control-label col-form-label">URL</label>
+                                        <div class="col-sm-9">
+                                            <input type="url" class="form-control" id="fname" name="url" placeholder="URL">
+                                        </div>
+                                    </div>
                                 <div class="border-top">
                                     <div class="card-body">
                                     	<a  class="btn btn-danger m-t-15 waves-effect" href="{{ route('admin.categorias.index') }}">Regresar</a>

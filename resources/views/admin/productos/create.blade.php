@@ -2,7 +2,27 @@
 
 @section('title','Productos - Agregar Nuevo Producto')
 
+@push('js')
+
+
+<script type="text/javascript">
+@foreach($categories as $key=>$category )
+function mostrar(id) {
+    if ({{ $category->id }} == "{{ $category->id}}") {
+        $("#{{ $category->id }}").show();
+    }
+
+    if ( id == "SeleccionaCategoria") {
+        $("#{{ $category->id }}").hide();
+    }
+}
+@endforeach
+</script>
+
+@endpush
+
 @section('content')
+
 <div class="page-wrapper">
     <div class="page-breadcrumb">
         <div class="row">
@@ -116,8 +136,9 @@
                         </div>
                         
                  </div>
-            </div>   
+            </div> 
         </div> 
+
 </div>
 
 

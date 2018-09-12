@@ -98,6 +98,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 </head>
 
 <body>
+    
     @include('layouts.frontend.partial.header')
 
     
@@ -143,7 +144,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     </h4>
                                     <div class="info-product-price">
                                         <span class="item_price">${{$product->Precio_venta  }} </span>
-                                        <del>$280.00</del>
+                                        <del>$400.00</del>
                                     </div>
                                     <div class="snipcart-details top_brand_home_details item_add single-item hvr-outline-out">
                                         <form action="#" method="post">
