@@ -11,6 +11,8 @@
 |
 */
 Route::get('/','HomeController@index')->name('welcome');
+Route::get('categoria/{slug}','HomeController@productos');
+Route::get('marca/{slug}','HomeController@marca');
 /*Route::get('/', function () {
     return view('layouts.app');
 });*/

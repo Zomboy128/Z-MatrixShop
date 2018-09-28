@@ -25,7 +25,7 @@ class CategoryController extends Controller
     {
     	$this->validate($request,[
             'name' => 'required|min:3|max:20|unique:categories',
-            'url'=> 'required|url']);
+            'url'=> 'required|url|unique:categories']);
 
     	$categorias = new Category();
     	$categorias->name = $request->name;
@@ -45,7 +45,7 @@ class CategoryController extends Controller
 
     public function update(Request $request, $id)
     {
-       $this->validate($request,['name' => 'required|min:3|max:20|unique:categories']);
+       $this->validate($request,['name' => 'required|min:3|max:20','url'=> 'required|min:3|max:50']);
 
         $categorias = Category::find($id);
         $categorias->name = $request->name;

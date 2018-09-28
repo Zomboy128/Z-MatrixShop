@@ -356,24 +356,9 @@
 					<div class="col-xs-6 footer-grids">
 						<h3>Categorias</h3>
 						<ul>
-							<li>
-								<a href="product.html">Comestibles</a>
-							</li>
-							<li>
-								<a href="product.html">Fruits</a>
-							</li>
-							<li>
-								<a href="product.html">Soft Drinks</a>
-							</li>
-							<li>
-								<a href="product2.html">Dishwashers</a>
-							</li>
-							<li>
-								<a href="product.html">Biscuits & Cookies</a>
-							</li>
-							<li>
-								<a href="product2.html">Baby Diapers</a>
-							</li>
+							@foreach($categories as $category)
+							<li><a href="{{ asset('/categoria/'.$category->slug) }}">{{ $category->name }}</a></li>
+							@endforeach
 						</ul>
 					</div>
 					<div class="col-xs-6 footer-grids agile-secomk">
@@ -497,114 +482,16 @@ Cuidado del bebé, suministros para mascotas, atención médica y otros producto
 				<div class="sub-some">
 					<h5>Marcas Populares</h5>
 					<ul>
-						<li>
-							<a href="product.html">Aashirvaad</a>
-						</li>
-						<li>
-							<a href="product.html">Amul</a>
-						</li>
-						<li>
-							<a href="product.html">Bingo</a>
-						</li>
-						<li>
-							<a href="product.html">Boost</a>
-						</li>
-						<li>
-							<a href="product.html">Durex</a>
-						</li>
-						<li>
-							<a href="product.html"> Maggi</a>
-						</li>
-						<li>
-							<a href="product.html">Glucon-D</a>
-						</li>
-						<li>
-							<a href="product.html">Horlicks</a>
-						</li>
-						<li>
-							<a href="product2.html">Head & Shoulders</a>
-						</li>
-						<li>
-							<a href="product2.html">Dove</a>
-						</li>
-						<li>
-							<a href="product2.html">Dettol</a>
-						</li>
-						<li>
-							<a href="product2.html">Dabur</a>
-						</li>
-						<li>
-							<a href="product2.html">Colgate</a>
-						</li>
-						<li>
-							<a href="product.html">Coca-Cola</a>
-						</li>
-						<li>
-							<a href="product2.html">Closeup</a>
-						</li>
-						<li>
-							<a href="product2.html"> Cinthol</a>
-						</li>
-						<li>
-							<a href="product.html">Cadbury</a>
-						</li>
-						<li>
-							<a href="product.html">Bru</a>
-						</li>
-						<li>
-							<a href="product.html">Bournvita</a>
-						</li>
-						<li>
-							<a href="product.html">Tang</a>
-						</li>
-						<li>
-							<a href="product.html">Pears</a>
-						</li>
-						<li>
-							<a href="product.html">Oreo</a>
-						</li>
-						<li>
-							<a href="product.html"> Taj Mahal</a>
-						</li>
-						<li>
-							<a href="product.html">Sprite</a>
-						</li>
-						<li>
-							<a href="product.html">Thums Up</a>
-						</li>
-						<li>
-							<a href="product2.html">Fair & Lovely</a>
-						</li>
-						<li>
-							<a href="product2.html">Lakme</a>
-						</li>
-						<li>
-							<a href="product.html">Tata</a>
-						</li>
-						<li>
-							<a href="product2.html">Sunfeast</a>
-						</li>
-						<li>
-							<a href="product2.html">Sunsilk</a>
-						</li>
-						<li>
-							<a href="product.html">Patanjali</a>
-						</li>
-						<li>
-							<a href="product.html">MTR</a>
-						</li>
-						<li>
-							<a href="product.html">Kissan</a>
-						</li>
-						<li>
-							<a href="product2.html"> Lipton</a>
-						</li>
+						@foreach($brands as $brand)
+						<li><a href="{{ asset('/marca/'.$brand->slug) }}">{{ $brand->name }}</a></li>
+						@endforeach
 					</ul>
+					
 				</div>
 				<!-- //brands -->
 				<!-- payment -->
 				<div class="sub-some child-momu">
-					<h5>Payment Method</h5>
+					<h5>Metodos De Pago</h5>
 					<ul>
 						<li>
 							<img src="{{ asset('assets/frontend/images/pay2.png') }}" alt="">
