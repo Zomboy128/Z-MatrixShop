@@ -16,3 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::resource('WserviceUsuario','WSuser');
+Route::resource('WserviceCategoria','WScategory');
+Route::resource('WserviceMarca','WSbrands');
+Route::resource('WserviceProductos','WSproduct');
+Route::resource('WserviceSlider','WSlider');
+
