@@ -10,7 +10,7 @@ class WScategory extends Controller
     public function index()
     {
        $categoria = Category::all();
-       return response()->json($categoria,200);
+       return response()->json($categoria,200)->header('Content-Type','application/json');
     }
 
     public function store(Request $request)
@@ -19,6 +19,8 @@ class WScategory extends Controller
         $categoria->name = $request->name;
     	$categoria->slug = str_slug($request->name);
     	$categoria->save();
+
+         return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function show($id)
@@ -32,6 +34,8 @@ class WScategory extends Controller
         $categoria->name = $request->name;
         $categoria->slug = str_slug($request->name);
         $categoria->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function destroy($id)

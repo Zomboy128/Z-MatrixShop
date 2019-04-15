@@ -9,10 +9,10 @@
 			<!-- header-bot-->
 			<div class="col-md-4 logo_agile">
 				<h1>
-					<a href="index.html">
+					<a href="{{ route('welcome') }}">
 						<span>Z</span>-
 						<span>M</span>atrixShop
-						<img src="{{ asset('assets/frontend/images/logo2.png') }}" alt="">
+						<img src="{{ asset('assets/frontend/images/logo2.png') }}" alt="{{ route('welcome') }}">
 					</a>
 				</h1>
 			</div>

@@ -138,14 +138,14 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                     <img src="{{ asset('uploads/products/'.$product->image) }}" alt="" style="height: 150px; width: 190px;" >
                                     <div class="men-cart-pro">
                                         <div class="inner-men-cart-pro">
-                                            <a href="single.html" class="link-product-add-cart">Quick View</a>
+                                            <a href="{{ url('productos/'.$product->id) }}" class="link-product-add-cart">Vista rápida</a>
                                         </div>
                                     </div>
                                     <span class="product-new-top">New</span>
                                 </div>
                                 <div class="item-info-product ">
                                     <h4>
-                                        <a href="single.html">{{ $product->name }} </a>
+                                        <a href="{{ url('productos/'.$product->id) }}">{{ $product->name }} </a>
                                     </h4>
                                     <div class="info-product-price">
                                         <span class="item_price">${{$product->Precio_venta  }} </span>
@@ -162,7 +162,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                                 <input type="hidden" name="currency_code" value="USD" />
                                                 <input type="hidden" name="return" value=" " />
                                                 <input type="hidden" name="cancel_return" value=" " />
-                                                <input type="submit" name="submit" value="Add to cart" class="button" />
+                                                <input type="submit" name="submit" value="Agregar al carrito" class="button" />
                                             </fieldset>
                                         </form>
                                     </div>

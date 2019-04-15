@@ -10,7 +10,7 @@ class WSbrands extends Controller
     public function index()
     {
     	$marcas = Brand::all();
-    	return response()->json($marcas,200);
+    	return response()->json($marcas,200)->header('Content-Type','application/json');
     }
 
     public function store(Request $request)
@@ -19,6 +19,8 @@ class WSbrands extends Controller
     	$marcas->name = $request->name;
     	$marcas->slug = str_slug($request->name);
     	$marcas->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function show($id)
@@ -32,6 +34,8 @@ class WSbrands extends Controller
     	$marcas->name = $request->name;
     	$marcas->slug = str_slug($request->name);
     	$marcas->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function destroy($id)

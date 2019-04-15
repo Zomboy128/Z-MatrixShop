@@ -17,7 +17,7 @@ class WSuser extends Controller
     	$usuario = User::all();
         $producto = Product::all();
         $categoria = Category::all();
-    	return response()->json([$usuario,$producto,$categoria,200]);
+    	return response()->json([$usuario,$producto,$categoria,200])->header('Content-Type','application/json');
     }
 
     public function store(Request $request)
@@ -33,6 +33,8 @@ class WSuser extends Controller
         $usuario->image = $request->image;
         //Guardamos el cambio en nuestro modelo
         $usuario->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function show($id)
@@ -51,6 +53,8 @@ class WSuser extends Controller
         $usuario->password = Hash::make($request->password);
         $usuario->image = $request->image;
         $usuario->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function destroy($id)

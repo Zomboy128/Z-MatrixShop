@@ -13,6 +13,7 @@
 Route::get('/','HomeController@index')->name('welcome');
 Route::get('categoria/{slug}','HomeController@productos');
 Route::get('marca/{slug}','HomeController@marca');
+Route::get('productos/{id}','ProductosController@productos')->name('Detalle');
 /*Route::get('/', function () {
     return view('layouts.app');
 });*/

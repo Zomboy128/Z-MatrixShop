@@ -15,7 +15,7 @@ class WSproduct extends Controller
     public function index()
     {
         $producto = Product::all();
-        return response()->json($producto,200);
+        return response()->json($producto,200)200)->header('Content-Type','application/json');
     }
 
     public function store(Request $request)
@@ -48,6 +48,8 @@ class WSproduct extends Controller
         $producto->cantidad_ingresar=$request->cantidad_ingresar;
         $producto->image = $imagename;
         $producto->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function show($id)
@@ -85,6 +87,8 @@ class WSproduct extends Controller
         $producto->cantidad_ingresar=$request->cantidad_ingresar;
         $producto->image = $imagename;
         $producto->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     public function destroy($id)

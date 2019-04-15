@@ -17,7 +17,7 @@ class WSlider extends Controller
     public function index()
     {
         $slider=Slider::all();
-        return response()->json($slider,200);
+        return response()->json($slider,200)->header('Content-Type','application/json');
     }
 
     /**
@@ -58,6 +58,8 @@ class WSlider extends Controller
         $slider->sub_title = $request->sub_title;
         $slider->image = $imagename;
         $slider->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     /**
@@ -111,6 +113,8 @@ class WSlider extends Controller
         $slider->sub_title = $request->sub_title;
         $slider->image = $imagename;
         $slider->save();
+
+        return response(($result === true ? 'succed':'failed'),200)->header('Content-Type','application/json');
     }
 
     /**
